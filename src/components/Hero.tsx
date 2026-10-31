@@ -11,18 +11,10 @@ interface HeroProps {
 }
 
 export default function Hero({ searchQuery, onSearchChange, totalCount }: HeroProps) {
-  const quickTags = ["Infergon", "Scorchhowl", "Prismana", "Echoing Grimoire", "Dewple", "Alpha Ignitis"];
+  const quickTags = ["Infergon", "Scorchhowl", "Echoing Grimoire", "Dewple", "Alpha Ignitis"];
 
   return (
     <section className="pt-6 pb-6 px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-      {/* Domain Badge */}
-      <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#e2e6d8] border border-[#d2d7c5] text-xs font-bold text-[#1d2046] mb-4 shadow-sm">
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>aniimopower.app</span>
-        <span className="text-gray-400">•</span>
-        <span className="text-[#cc5231]">v1.0 & v1.1 Complete Database</span>
-      </div>
-
       {/* Big Logo in the Middle */}
       <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl h-28 sm:h-36 md:h-44 mb-3 group">
         <Image

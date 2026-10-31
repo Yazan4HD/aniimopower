@@ -66,13 +66,13 @@ export default function AniimoCard({ aniimo, onClick }: AniimoCardProps) {
                 )}
               </div>
               <span
-                className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
+                className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${
                   isV11
-                    ? "bg-blue-600 text-white shadow-2xs tracking-wide"
+                    ? "bg-blue-600 text-white shadow-2xs"
                     : "text-[#6b7280] bg-[#f1f3ec]"
                 }`}
               >
-                {isV11 ? "NEW IN 1.1" : `v${aniimo.version}`}
+                v{aniimo.version}
               </span>
             </div>
 
@@ -198,20 +198,13 @@ export default function AniimoCard({ aniimo, onClick }: AniimoCardProps) {
                 {aniimo.location || "unknown"}
               </div>
             </div>
-
-            {/* 4. Build Status */}
-            <div className="bg-gray-50 py-1.5 px-2 rounded-lg text-center border border-gray-200/60">
-              <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wide">
-                Build not published yet
-              </span>
-            </div>
           </div>
         )}
       </div>
 
       {/* Bottom Footer / Action */}
       <div className="mt-3 pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#1d2046] group-hover:text-[#cc5231] transition-colors">
-        <span>{isV11 ? "View 1.1 Profile & Evolution" : "Upgrade Guide & Build"}</span>
+        <span>View Profile & Details</span>
         <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </div>
     </div>

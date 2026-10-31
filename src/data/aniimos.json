@@ -564,7 +564,6 @@
       "ort",
       ") at Lv. 57 with a Wave Stone",
       "at Cloudreach Falls",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -573,8 +572,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/dewple-render.png",
     "officialWikiId": "10653",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-016",
@@ -595,7 +593,6 @@
       "Dewple Lv. 57",
       "ort",
       "at Cloudreach Falls",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -604,8 +601,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/dewlop-render.png",
     "officialWikiId": "10651",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-017",
@@ -624,7 +620,6 @@
       "Popapus",
       "Lumin stage",
       "Gachapus Lv: 57",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -633,8 +628,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/popapus-render.png",
     "officialWikiId": "10621",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-018",
@@ -656,7 +650,6 @@
       "Water",
       "Dark",
       "escent Bay durng Prismana Flow",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -665,8 +658,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/gachapus-render.png",
     "officialWikiId": "10623",
-    "secondaryElement": "Dark",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Dark"
   },
   {
     "id": "aniimo-019",
@@ -685,7 +677,6 @@
       "Lilipole",
       "Lumin stage",
       "Scrubbit Lv: 62",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -694,8 +685,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/lilipole-render.png",
     "officialWikiId": "10541",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-020",
@@ -716,7 +706,6 @@
       "? at Lv. 62 with",
       "Wave Stone",
       "rain",
-      "Build not published",
       "yet"
     ],
     "role": "Break",
@@ -725,8 +714,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/scrubbit-render.png",
     "officialWikiId": "10543",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-021",
@@ -747,7 +735,6 @@
       "Whirlbite Lv. 64",
       "rge, Cloudreach Falls",
       "the Waves)",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -756,8 +743,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/saws-render.png",
     "officialWikiId": "10391",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-022",
@@ -789,8 +775,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/whirlbite-render.png",
     "officialWikiId": "10393",
-    "secondaryElement": "Dark",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Dark"
   },
   {
     "id": "aniimo-023",
@@ -811,7 +796,6 @@
       "Jeburst Lv: 66",
       "alls",
       "Is; Tempest Form (Water/Wind)",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -820,8 +804,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/jeglid-render.png",
     "officialWikiId": "10691",
-    "secondaryElement": "Wind",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Wind"
   },
   {
     "id": "aniimo-024",
@@ -844,7 +827,6 @@
       "Water",
       "Dark",
       "to 23; Tempest Form (Water/Wind)",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -853,8 +835,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/jeburst-render.png",
     "officialWikiId": "10693",
-    "secondaryElement": "Dark",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Dark"
   },
   {
     "id": "aniimo-025",
@@ -1154,8 +1135,7 @@
       "Crocobask",
       "Nova stage",
       "ort",
-      "sk at Lv: 62 with a Sprout Stone",
-      "Build not published yet"
+      "sk at Lv: 62 with a Sprout Stone"
     ],
     "role": "Support",
     "evolution": "Evolved from Salabask at Lv. 62 with a Sprout Stone",
@@ -1163,8 +1143,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/crocobask-render.png",
     "officialWikiId": "10603",
-    "secondaryElement": "Water",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Water"
   },
   {
     "id": "aniimo-033",
@@ -1183,8 +1162,7 @@
       "Bubbeep",
       "Lumin stage",
       "Glameep",
-      "Lv. 57",
-      "Build not published yet"
+      "Lv. 57"
     ],
     "role": "Heal",
     "evolution": "Evolves to Glameep at Lv. 57 with a Sprout Stone",
@@ -1192,8 +1170,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/bubbeep-render.png",
     "officialWikiId": "10581",
-    "secondaryElement": "Water",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Water"
   },
   {
     "id": "aniimo-034",
@@ -1215,8 +1192,7 @@
       "57 (Sprout Stone) after beating",
       "Grass",
       "Dark",
-      "3 to 30; Tempest Form (Grass/Wind) in storms",
-      "Build not published yet"
+      "3 to 30; Tempest Form (Grass/Wind) in storms"
     ],
     "role": "Heal",
     "evolution": "Evolved from Bubbeep at Lv. 57 (Sprout Stone) after beating Alpha",
@@ -1224,8 +1200,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/glameep-render.png",
     "officialWikiId": "10583",
-    "secondaryElement": "Dark",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Dark"
   },
   {
     "id": "aniimo-035",
@@ -1244,8 +1219,7 @@
       "Salabask",
       "Lumin stage",
       "Crocobask Lv: 62",
-      "ort",
-      "Build not published yet"
+      "ort"
     ],
     "role": "Support",
     "evolution": "Evolves to Crocobask at Lv. 62 with a Sprout Stone",
@@ -1253,8 +1227,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/salabask-render.png",
     "officialWikiId": "10601",
-    "secondaryElement": "Water",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Water"
   },
   {
     "id": "aniimo-036",
@@ -1593,7 +1566,6 @@
       "Single stage",
       "From the Fantasy Resonance event",
       "created Aniimo",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -1602,8 +1574,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/jaguaraun-render.png",
     "officialWikiId": "10713",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-045",
@@ -1739,7 +1710,6 @@
       "Sugarslime",
       "Lv: 62",
       "ni Lv: 62",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -1748,8 +1718,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/sugarfish-render.png",
     "officialWikiId": "10591",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-049",
@@ -1768,7 +1737,6 @@
       "Sugarslime",
       "Nova stage",
       "ish at Lv. 62 with a Freeze Stone",
-      "Build not published",
       "yet"
     ],
     "role": "Tank",
@@ -1777,8 +1745,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/sugarslime-render.png",
     "officialWikiId": "10593",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-050",
@@ -1801,7 +1768,6 @@
       "Ice",
       "Water",
       "sy Mirelands during Prismana Flow",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -1810,8 +1776,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/sugartini-render.png",
     "officialWikiId": "10594",
-    "secondaryElement": "Water",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Water"
   },
   {
     "id": "aniimo-051",
@@ -1833,7 +1798,6 @@
       "Jabster",
       "Lv: 64",
       "rge",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -1842,8 +1806,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/prawnch-render.png",
     "officialWikiId": "10401",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-052",
@@ -1866,8 +1829,7 @@
       "beating",
       "Ice",
       "Lightning",
-      "dwater Gorge; Rainfall Form (Ice/Water)",
-      "Build not published yet"
+      "dwater Gorge; Rainfall Form (Ice/Water)"
     ],
     "role": "Break",
     "evolution": "Evolved from Prawnch at Lv. 64 (Freeze Stone) after beating Alpha",
@@ -1875,8 +1837,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/jabster-render.png",
     "officialWikiId": "10403",
-    "secondaryElement": "Lightning",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Lightning"
   },
   {
     "id": "aniimo-053",
@@ -2171,7 +2132,6 @@
       "Mesmerowl Lv: 57",
       "Lv. 57",
       "Wildwater Gorge, Cloudreach Falls",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -2180,8 +2140,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/hypnowl-render.png",
     "officialWikiId": "10571",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-061",
@@ -2200,7 +2159,6 @@
       "Mesmerowl",
       "Nova stage",
       "wl at Lv. 57 with a Gust Stone",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -2209,8 +2167,7 @@
     "evolutionStage": "Gamma",
     "renderImage": "/images/renders/mesmerowl-render.png",
     "officialWikiId": "10573",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-062",
@@ -2233,7 +2190,6 @@
       "Wind",
       "Light",
       "Companion Handbook until Dec",
-      "Build not published",
       "yet"
     ],
     "role": "DPS",
@@ -2242,8 +2198,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/hypnyto-render.png",
     "officialWikiId": "10574",
-    "secondaryElement": "Light",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Light"
   },
   {
     "id": "aniimo-063",
@@ -2266,7 +2221,6 @@
       "Lv: 62",
       "Royalby Lv: 62",
       "Is, Wildwater Gorge; Cloudreach Falls",
-      "Build not published",
       "yet"
     ],
     "role": "Support",
@@ -2275,8 +2229,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/puffby-render.png",
     "officialWikiId": "10611",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-064",
@@ -2295,8 +2248,7 @@
       "Buffby",
       "Nova stage",
       "at Lv. 62 (Gust Stone",
-      "Hearty",
-      "Build not published yet"
+      "Hearty"
     ],
     "role": "Break",
     "evolution": "Evolved from Puffby at Lv. 62 (Gust Stone, Hearty nature)",
@@ -2304,8 +2256,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/buffby-render.png",
     "officialWikiId": "10613",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-065",
@@ -2328,8 +2279,7 @@
       "Wind",
       "Light",
       "n Abundance; Nov",
-      "to 16",
-      "Build not published yet"
+      "to 16"
     ],
     "role": "Regen",
     "evolution": "Evolved from Puffby at Lv. 62 (Gust Stone, Queen nature)",
@@ -2337,8 +2287,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/royalby-render.png",
     "officialWikiId": "10614",
-    "secondaryElement": "Light",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Light"
   },
   {
     "id": "aniimo-066",
@@ -2558,8 +2507,7 @@
       "Coraliz",
       "Nova stage",
       "h at Lv: 57 with a Loam Stone",
-      "rain (Earth only)",
-      "Build not published yet"
+      "rain (Earth only)"
     ],
     "role": "Regen",
     "evolution": "Evolved from Reefish at Lv. 57 with a Loam Stone during rain",
@@ -2567,8 +2515,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/coraliz-render.png",
     "officialWikiId": "10383",
-    "secondaryElement": "Water",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Water"
   },
   {
     "id": "aniimo-072",
@@ -2589,7 +2536,6 @@
       "Coraliz Lv: 57",
       "Mirelands",
       "rain (Earth only)",
-      "Build not published yet",
       "Rosy"
     ],
     "role": "Regen",
@@ -2598,8 +2544,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/reefish-render.png",
     "officialWikiId": "10381",
-    "secondaryElement": "Water",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Water"
   },
   {
     "id": "aniimo-073",
@@ -2849,7 +2794,6 @@
       "Lumin stage",
       "Pouchwisp Lv: 57",
       "Rosy Mirelands; Wildwater Gorge",
-      "Build not published",
       "yet"
     ],
     "role": "Regen",
@@ -2858,8 +2802,7 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/coinwisp-render.png",
     "officialWikiId": "10631",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-080",
@@ -2881,7 +2824,6 @@
       "Night Stone",
       "Dark",
       "n Abundance; Nov 2 to Q",
-      "Build not published",
       "yet"
     ],
     "role": "Regen",
@@ -2890,8 +2832,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/pouchwisp-render.png",
     "officialWikiId": "10633",
-    "secondaryElement": null,
-    "buildStatus": "Build not published yet"
+    "secondaryElement": null
   },
   {
     "id": "aniimo-081",
@@ -2914,7 +2855,6 @@
       "( Fire",
       "Dark",
       "the Season Achievement egg",
-      "Build not published",
       "6+};",
       "yet"
     ],
@@ -2924,8 +2864,7 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/ekrim-render.png",
     "officialWikiId": "10444",
-    "secondaryElement": "Fire",
-    "buildStatus": "Build not published yet"
+    "secondaryElement": "Fire"
   },
   {
     "id": "aniimo-082",

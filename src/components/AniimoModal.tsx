@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Aniimo, HeldItem } from "@/types";
 import { ELEMENT_COLORS, PERSONALITY_DESCRIPTIONS } from "@/lib/constants";
-import { X, Sparkles, Swords, Zap, Calculator, MapPin, Check, GitBranch, Info, AlertCircle } from "lucide-react";
+import { X, Sparkles, Swords, Zap, Calculator, MapPin, Check, GitBranch, Info } from "lucide-react";
 import heldItemsData from "@/data/held_items.json";
 
 interface AniimoModalProps {
@@ -54,9 +54,8 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
               {/* Big Circular Avatar with Prismana Rainbow Glow */}
               <div
-                className={`relative w-24 h-24 sm:w-28 sm:h-28 rounded-full shrink-0 p-1 ${
-                  aniimo.isPrismana ? "rainbow-border rainbow-glow" : `border-4 ${elem.border} bg-white shadow-md`
-                }`}
+                className={`relative w-24 h-24 sm:w-28 sm:h-28 rounded-full shrink-0 p-1 ${aniimo.isPrismana ? "rainbow-border rainbow-glow" : `border-4 ${elem.border} bg-white shadow-md`
+                  }`}
               >
                 <div className="relative w-full h-full rounded-full overflow-hidden bg-[#f1f3ec]">
                   <Image
@@ -93,7 +92,7 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
                         : "text-[#1d2046] bg-[#f1f3ec] border border-[#d6dacb]"
                     }`}
                   >
-                    {isV11 ? "New in 1.1" : `Version ${aniimo.version}`}
+                    Version {aniimo.version}
                   </span>
                   <span
                     className={`text-xs font-extrabold px-2.5 py-0.5 rounded-md border tracking-wide uppercase ${
@@ -114,7 +113,7 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
 
                 <p className="text-xs sm:text-sm text-[#4b5563] mt-1">
                   {isV11
-                    ? "New species introduced in the Version 1.1 expansion. Official combat build ratings are pending Alpha raid calibration."
+                    ? "Species introduced in the Version 1.1 expansion. Complete combat role, evolution path, and habitat details."
                     : `Optimal combat configuration for ${aniimo.name}. Balanced for endgame Boss raids, Bloom challenges, and PvP.`}
                 </p>
               </div>
@@ -279,14 +278,6 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
                 <p className="text-sm font-semibold text-amber-950">
                   {aniimo.location || "unknown"}
                 </p>
-              </div>
-
-              {/* Build Not Published Yet Notice */}
-              <div className="p-3.5 rounded-2xl bg-gray-50 border border-gray-200 text-center flex items-center justify-center gap-2">
-                <AlertCircle className="w-4 h-4 text-gray-400" />
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                  Build not published yet (Version 1.1)
-                </span>
               </div>
             </div>
           )}

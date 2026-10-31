@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Search, Calculator, ShieldAlert, Sparkles, X, ChevronRight, Layers, Lock } from "lucide-react";
+import { Search, Calculator, ShieldAlert, Sparkles, X, ChevronRight, Layers } from "lucide-react";
 import { Aniimo } from "@/types";
 import { createAniimoSearchIndex } from "@/lib/search";
 import rawAniimos from "@/data/aniimos.json";
@@ -118,9 +118,8 @@ export default function Navbar({ onSelectAniimo }: NavbarProps) {
                     >
                       <div className="flex items-center gap-3">
                         <div
-                          className={`relative w-9 h-9 rounded-full overflow-hidden shrink-0 ${
-                            item.isPrismana ? "rainbow-border p-[2px]" : "border-2 border-gray-200"
-                          }`}
+                          className={`relative w-9 h-9 rounded-full overflow-hidden shrink-0 ${item.isPrismana ? "rainbow-border p-[2px]" : "border-2 border-gray-200"
+                            }`}
                         >
                           <Image
                             src={item.image}
@@ -167,11 +166,10 @@ export default function Navbar({ onSelectAniimo }: NavbarProps) {
         <nav className="flex items-center gap-1 sm:gap-2">
           <Link
             href="/"
-            className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 ${
-              pathname === "/"
+            className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 ${pathname === "/"
                 ? "bg-[#1d2046] text-white shadow-sm"
                 : "text-[#1d2046] hover:bg-[#e4e8dc]"
-            }`}
+              }`}
           >
             <Layers className="w-3.5 h-3.5" />
             <span>Guide</span>
@@ -179,11 +177,10 @@ export default function Navbar({ onSelectAniimo }: NavbarProps) {
 
           <Link
             href="/calculator"
-            className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 ${
-              pathname === "/calculator"
+            className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 ${pathname === "/calculator"
                 ? "bg-[#1d2046] text-white shadow-sm"
                 : "text-[#1d2046] hover:bg-[#e4e8dc]"
-            }`}
+              }`}
           >
             <Calculator className="w-3.5 h-3.5 text-[#ecd86a]" />
             <span>Calculator</span>
@@ -199,16 +196,6 @@ export default function Navbar({ onSelectAniimo }: NavbarProps) {
           >
             <Sparkles className="w-3.5 h-3.5 text-[#cc5231]" />
             <span>Held Items</span>
-          </Link>
-
-          <Link
-            href="/admin"
-            className={`p-2 rounded-full text-[#1d2046]/60 hover:text-[#1d2046] hover:bg-[#e4e8dc] transition-all ml-1 ${
-              pathname === "/admin" ? "bg-[#1d2046] text-white shadow-xs" : ""
-            }`}
-            title="Admin CMS Portal"
-          >
-            <Lock className="w-3.5 h-3.5" />
           </Link>
         </nav>
       </div>

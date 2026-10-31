@@ -40,7 +40,6 @@ export interface Aniimo {
   evolution?: string;
   location?: string;
   secondaryElement?: string | null;
-  buildStatus?: string;
 }
 
 export interface HeldItem {
