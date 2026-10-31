@@ -95,8 +95,16 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
                   >
                     {isV11 ? "New in 1.1" : `Version ${aniimo.version}`}
                   </span>
-                  <span className="text-xs font-bold text-[#6b7280] bg-gray-100 px-2 py-0.5 rounded-md capitalize">
-                    {aniimo.stage || "unknown"}
+                  <span
+                    className={`text-xs font-extrabold px-2.5 py-0.5 rounded-md border tracking-wide uppercase ${
+                      aniimo.stage === "Nova"
+                        ? "bg-purple-100 text-purple-700 border-purple-200"
+                        : aniimo.stage === "Gamma"
+                        ? "bg-amber-100 text-amber-800 border-amber-200"
+                        : "bg-emerald-100 text-emerald-700 border-emerald-200"
+                    }`}
+                  >
+                    {aniimo.stage} Stage
                   </span>
                 </div>
 

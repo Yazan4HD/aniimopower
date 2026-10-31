@@ -1,4 +1,28 @@
-import { ElementType } from "@/types";
+import { ElementType, EvolutionStage } from "@/types";
+
+export const EVOLUTION_STAGE_CONFIG: Record<
+  EvolutionStage,
+  { label: string; badgeClass: string; desc: string; order: number }
+> = {
+  Lumin: {
+    label: "Lumin",
+    badgeClass: "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30",
+    desc: "Stage 1 (Base Form)",
+    order: 1,
+  },
+  Gamma: {
+    label: "Gamma",
+    badgeClass: "bg-amber-500/15 text-amber-300 border border-amber-500/30",
+    desc: "Stage 2 (Mid Form)",
+    order: 2,
+  },
+  Nova: {
+    label: "Nova",
+    badgeClass: "bg-purple-500/15 text-purple-200 border border-purple-500/30",
+    desc: "Stage 3 (Final Form)",
+    order: 3,
+  },
+};
 
 export const ELEMENT_COLORS: Record<ElementType, { bg: string; text: string; border: string; hex: string }> = {
   Fire: {

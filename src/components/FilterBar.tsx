@@ -33,12 +33,10 @@ const ELEMENTS: (ElementType | "All")[] = [
 ];
 
 const STAGES = [
-  { id: "All", label: "All Stages" },
-  { id: "Single Stage", label: "Single Stage" },
-  { id: "Base Stage", label: "Base Form" },
-  { id: "Nova Stage", label: "Nova Stage" },
-  { id: "Lumin Stage", label: "Lumin Stage (v1.1)" },
-  { id: "Final Stage", label: "Final Form" },
+  { id: "All", label: "All Evolution Stages" },
+  { id: "Lumin", label: "Lumin (Stage 1)" },
+  { id: "Gamma", label: "Gamma (Stage 2)" },
+  { id: "Nova", label: "Nova (Stage 3)" },
 ];
 
 export default function FilterBar({

@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Search, Calculator, ShieldAlert, Sparkles, X, ChevronRight, Layers } from "lucide-react";
+import { Search, Calculator, ShieldAlert, Sparkles, X, ChevronRight, Layers, Lock } from "lucide-react";
 import { Aniimo } from "@/types";
 import { createAniimoSearchIndex } from "@/lib/search";
 import rawAniimos from "@/data/aniimos.json";
@@ -199,6 +199,16 @@ export default function Navbar({ onSelectAniimo }: NavbarProps) {
           >
             <Sparkles className="w-3.5 h-3.5 text-[#cc5231]" />
             <span>Held Items</span>
+          </Link>
+
+          <Link
+            href="/admin"
+            className={`p-2 rounded-full text-[#1d2046]/60 hover:text-[#1d2046] hover:bg-[#e4e8dc] transition-all ml-1 ${
+              pathname === "/admin" ? "bg-[#1d2046] text-white shadow-xs" : ""
+            }`}
+            title="Admin CMS Portal"
+          >
+            <Lock className="w-3.5 h-3.5" />
           </Link>
         </nav>
       </div>

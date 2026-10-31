@@ -9,14 +9,16 @@ export type ElementType =
   | "Dark"
   | "Light";
 
+export type EvolutionStage = "Lumin" | "Gamma" | "Nova";
+
 export interface Aniimo {
   id: string;
   slug: string;
   name: string;
   element: ElementType;
   version: "1.0" | "1.1";
-  stage: string;
-  evolutionStage: "Single Stage" | "Base Stage" | "Nova Stage" | "Lumin Stage" | "Final Stage";
+  stage: EvolutionStage;
+  evolutionStage: EvolutionStage;
   isPrismana: boolean;
   image: string;
   cardIndex: number;

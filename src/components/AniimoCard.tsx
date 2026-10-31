@@ -80,13 +80,19 @@ export default function AniimoCard({ aniimo, onClick }: AniimoCardProps) {
               {aniimo.name}
             </h3>
 
-            <div className="flex items-center gap-1.5 text-xs text-[#6b7280] font-medium mt-0.5">
-              <span className="capitalize">{aniimo.stage || "unknown"}</span>
-              {!isV11 && aniimo.isFinalForm && (
-                <span className="inline-flex items-center text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1 py-0.2 rounded">
-                  <Check className="w-2.5 h-2.5 mr-0.5" /> Final
-                </span>
-              )}
+            <div className="flex items-center gap-1.5 mt-1">
+              <span
+                className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md border tracking-wide ${
+                  aniimo.stage === "Nova"
+                    ? "bg-purple-50 text-purple-700 border-purple-200"
+                    : aniimo.stage === "Gamma"
+                    ? "bg-amber-50 text-amber-800 border-amber-200"
+                    : "bg-emerald-50 text-emerald-700 border-emerald-200"
+                }`}
+              >
+                {aniimo.stage}
+              </span>
+              <span className="text-[11px] text-[#6b7280] font-medium">Stage</span>
             </div>
           </div>
         </div>

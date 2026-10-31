@@ -42,12 +42,11 @@ export default function HomePage() {
       result = result.filter((a) => a.version === selectedVersion);
     }
 
-    // 4. Evolution Stage Filter
+    // 4. Evolution Stage Filter (Lumin, Gamma, Nova)
     if (selectedStage !== "All") {
-      result = result.filter((a) => {
-        if (selectedStage === "Final Stage") return a.isFinalForm;
-        return a.evolutionStage === selectedStage || a.stage.toLowerCase().includes(selectedStage.toLowerCase().replace(" stage", ""));
-      });
+      result = result.filter(
+        (a) => a.evolutionStage === selectedStage || a.stage === selectedStage
+      );
     }
 
     // 5. Prismana Only Filter
