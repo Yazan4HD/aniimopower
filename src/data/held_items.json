@@ -1,0 +1,101 @@
+[
+  {
+    "id": "echoing-grimoire",
+    "name": "Echoing Grimoire",
+    "alphaBoss": "Alpha Irisal",
+    "location": "Sea of Flowers, south of Sea of Flowers Bloom",
+    "region": "Sea of Flowers",
+    "requirement": "Open world bloom access",
+    "description": "Empowers consecutive skill casts, multiplying spell and energy damage with each repeated strike.",
+    "roleSynergy": "Best for burst DPS, skill-looping attackers, and breath-attack specialists.",
+    "icon": "/images/items/echoing-grimoire.png"
+  },
+  {
+    "id": "ferocious-fang",
+    "name": "Ferocious Fang",
+    "alphaBoss": "Alpha Ignitis",
+    "location": "Berylline Vale, southeast of Berylline Vale Bloom",
+    "region": "Berylline Vale",
+    "requirement": "Open world bloom access",
+    "description": "Dramatically increases raw offensive power and physical impact. Amplifies critical strike damage against debuffed enemies.",
+    "roleSynergy": "Best in slot for aggressive physical attackers and flame claw brawlers.",
+    "icon": "/images/items/ferocious-fang.png"
+  },
+  {
+    "id": "miraculous-fleece",
+    "name": "Miraculous Fleece",
+    "alphaBoss": "Alpha Ignitis",
+    "location": "Berylline Vale, southeast of Berylline Vale Bloom",
+    "region": "Berylline Vale",
+    "requirement": "Open world bloom access",
+    "description": "Bestows constant passive regeneration and reinforces physical defense under heavy incoming damage.",
+    "roleSynergy": "Ideal for durable front-line tanks, regen sustain builds, and support guardians.",
+    "icon": "/images/items/miraculous-fleece.png"
+  },
+  {
+    "id": "spirited-feather",
+    "name": "Spirited Feather",
+    "alphaBoss": "Alpha Irisal",
+    "location": "Sea of Flowers, south of Sea of Flowers Bloom",
+    "region": "Sea of Flowers",
+    "requirement": "Open world bloom access",
+    "description": "Accelerates movement and action cooldowns, allowing swift repositioning and evasive counterattacks.",
+    "roleSynergy": "Excellent for agility-based roamers, evasion scouts, and quick-turn strikers.",
+    "icon": "/images/items/spirited-feather.png"
+  },
+  {
+    "id": "fission-needles",
+    "name": "Fission Needles",
+    "alphaBoss": "Alpha Irisal",
+    "location": "Sea of Flowers, south of Sea of Flowers Bloom",
+    "region": "Sea of Flowers",
+    "requirement": "Open world bloom access",
+    "description": "Splinters attacks into piercing secondary projectiles, shredding enemy shields and defenses.",
+    "roleSynergy": "Top tier for multi-hit attackers, projectile specialists, and shield breakers.",
+    "icon": "/images/items/fission-needles.png"
+  },
+  {
+    "id": "gargantuan-horn",
+    "name": "Gargantuan Horn",
+    "alphaBoss": "Alpha Grizbo",
+    "location": "Rosetower Woods, north of Rosetower Woods Bloom",
+    "region": "Rosetower Woods",
+    "requirement": "Open world bloom access",
+    "description": "Massively boosts stagger and break power, quickly crumbling boss posture and poise meters.",
+    "roleSynergy": "Essential for designated Breakers and heavy blunt weapon Aniimos.",
+    "icon": "/images/items/gargantuan-horn.png"
+  },
+  {
+    "id": "heartseeker-pendant",
+    "name": "Heartseeker Pendant",
+    "alphaBoss": "Alpha Grizbo",
+    "location": "Rosetower Woods, north of Rosetower Woods Bloom",
+    "region": "Rosetower Woods",
+    "requirement": "Open world bloom access",
+    "description": "Sharpens precision strikes against vital points, dramatically increasing critical hit probability.",
+    "roleSynergy": "Best for crit-focused assassins, single-target executioners, and fast DPS.",
+    "icon": "/images/items/heartseeker-pendant.png"
+  },
+  {
+    "id": "heritage-amulet",
+    "name": "Heritage Amulet",
+    "alphaBoss": "Alpha Grizbo",
+    "location": "Rosetower Woods, north of Rosetower Woods Bloom",
+    "region": "Rosetower Woods",
+    "requirement": "Open world bloom access",
+    "description": "Infuses the bearer with ancestral vigor, expanding maximum health pool and resisting elemental debuffs.",
+    "roleSynergy": "Great for hybrid bruisers, party buffers, and high-health juggernauts.",
+    "icon": "/images/items/heritage-amulet.png"
+  },
+  {
+    "id": "explosive-gloves",
+    "name": "Explosive Gloves",
+    "alphaBoss": "Alpha Geoclaw",
+    "location": "Nimbus Fields, underground in the northwest near Breezy Plains Branch",
+    "region": "Nimbus Fields",
+    "requirement": "Requires 120 Lumin Amber to unlock the underground chamber",
+    "description": "Detonates lingering debuffs on basic attack and skill impacts, creating cascading elemental blast waves.",
+    "roleSynergy": "Incredible for burn-stacking DPS like Scorchhowl and explosive area-damage dealers.",
+    "icon": "/images/items/explosive-gloves.png"
+  }
+]

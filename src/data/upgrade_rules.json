@@ -1,0 +1,110 @@
+{
+  "totalCosts": {
+    "dewdropCrystals": 850,
+    "elementalStones": 42,
+    "phenomenaCrystals": 2
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "name": "Stage 1 (Base Form)",
+      "stars": 1,
+      "levelReq": 1,
+      "dewdropCrystals": 0,
+      "elementalStones": 0,
+      "phenomenaCrystals": 0,
+      "benefit": "Base unlocked Aniimo potential",
+      "awakeningBonus": "+0"
+    },
+    {
+      "stage": 2,
+      "name": "Stage 2 (Resonance II)",
+      "stars": 2,
+      "levelReq": 35,
+      "dewdropCrystals": 40,
+      "elementalStones": 2,
+      "phenomenaCrystals": 0,
+      "benefit": "Awakening ATK / BREAK / HP +2%",
+      "awakeningBonus": "+2% ATK/BRK/HP"
+    },
+    {
+      "stage": 3,
+      "name": "Stage 3 (Resonance III)",
+      "stars": 3,
+      "levelReq": 35,
+      "dewdropCrystals": 70,
+      "elementalStones": 4,
+      "phenomenaCrystals": 0,
+      "benefit": "REGEN / P.DEF / M.DEF +2%",
+      "awakeningBonus": "+2% RGN/DEF"
+    },
+    {
+      "stage": 4,
+      "name": "Stage 4 (Resonance IV)",
+      "stars": 4,
+      "levelReq": 35,
+      "dewdropCrystals": 105,
+      "elementalStones": 6,
+      "phenomenaCrystals": 0,
+      "benefit": "Counter Boost +20%",
+      "awakeningBonus": "+20% Counter"
+    },
+    {
+      "stage": 5,
+      "name": "Stage 5 (Resonance V)",
+      "stars": 5,
+      "levelReq": 35,
+      "dewdropCrystals": 130,
+      "elementalStones": 8,
+      "phenomenaCrystals": 0,
+      "benefit": "Capability Awakening +5",
+      "awakeningBonus": "Awakening +5"
+    },
+    {
+      "stage": 6,
+      "name": "Stage 6 (Phenomena Ascension)",
+      "stars": 6,
+      "levelReq": 35,
+      "dewdropCrystals": 215,
+      "elementalStones": 10,
+      "phenomenaCrystals": 1,
+      "benefit": "Capability Awakening +8 & Phenomena Aura",
+      "awakeningBonus": "Awakening +8"
+    },
+    {
+      "stage": 7,
+      "name": "Stage 7 (Peak Transcendence)",
+      "stars": 7,
+      "levelReq": 35,
+      "dewdropCrystals": 285,
+      "elementalStones": 10,
+      "phenomenaCrystals": 1,
+      "benefit": "Capability Awakening +10 (Max Power Unlocked)",
+      "awakeningBonus": "Awakening +10"
+    }
+  ],
+  "elementalStoneTypes": [
+    "Fire Stone", "Water Stone", "Grass Stone", "Lightning Stone",
+    "Ice Stone", "Wind Stone", "Earth Stone", "Dark Stone", "Light Stone"
+  ],
+  "regionalDewdrops": [
+    {
+      "name": "Breezy Plains Dewdrop Crystal",
+      "region": "Breezy Plains & Main Overworld",
+      "source": "Standard Regional Bosses & Blooms"
+    },
+    {
+      "name": "Whisperwake Isles Dewdrop Crystal",
+      "region": "Whisperwake Isles",
+      "source": "High-tier Omega Boss encounters"
+    }
+  ],
+  "rules": [
+    "Taking an Aniimo from Stage 1 all the way to Stage 7 requires exactly 850 Dewdrop Crystals, 42 Elemental Stones, and 2 Phenomena Crystals.",
+    "Each stage adds one more Star-Up requirement than the last (Stage 2 has 2 stars, Stage 3 has 3 stars, Stage 4 has 4 stars, Stage 5 has 5 stars, Stage 6 has 6 stars, Stage 7 has 7 stars).",
+    "Moving to the next stage (Ascension) costs elemental stones corresponding to the Aniimo's primary element.",
+    "Flux Crystal can stand in 1:1 for any missing Elemental Stone during Ascension.",
+    "Star Dust and Star Sand are strictly reserved for Capability Awakening nodes, NOT for Star-Up Resonance."
+  ]
+}
+
