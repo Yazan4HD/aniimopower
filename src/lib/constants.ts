@@ -1,4 +1,50 @@
-import { ElementType, EvolutionStage } from "@/types";
+import { ElementType, EvolutionStage, RoleType } from "@/types";
+
+export const ROLE_CONFIG: Record<
+  RoleType,
+  { label: string; icon: string; bg: string; text: string; border: string; desc: string }
+> = {
+  DPS: {
+    label: "DPS",
+    icon: "/images/roles/dps.webp",
+    bg: "bg-red-500/10",
+    text: "text-red-600",
+    border: "border-red-500/30",
+    desc: "Primary damage dealer specializing in burst and consistent damage.",
+  },
+  BREAK: {
+    label: "BREAK",
+    icon: "/images/roles/break.webp",
+    bg: "bg-amber-500/10",
+    text: "text-amber-700",
+    border: "border-amber-500/30",
+    desc: "Break specialist focused on shattering boss posture and stagger bars.",
+  },
+  Support: {
+    label: "Support",
+    icon: "/images/roles/support.webp",
+    bg: "bg-purple-500/10",
+    text: "text-purple-700",
+    border: "border-purple-500/30",
+    desc: "Utility enhancer buffing ally damage, skill loops, and cooldowns.",
+  },
+  Heal: {
+    label: "Heal",
+    icon: "/images/roles/heal.webp",
+    bg: "bg-emerald-500/10",
+    text: "text-emerald-700",
+    border: "border-emerald-500/30",
+    desc: "Direct recovery specialist restoring team health and vitality.",
+  },
+  REGEN: {
+    label: "REGEN",
+    icon: "/images/roles/regen.webp",
+    bg: "bg-teal-500/10",
+    text: "text-teal-700",
+    border: "border-teal-500/30",
+    desc: "Sustained regeneration and passive cleansing support.",
+  },
+};
 
 export const EVOLUTION_STAGE_CONFIG: Record<
   EvolutionStage,

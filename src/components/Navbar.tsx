@@ -134,6 +134,11 @@ export default function Navbar({ onSelectAniimo }: NavbarProps) {
                             <span className="font-bold text-sm text-[#1d2046] group-hover:text-[#cc5231] transition-colors">
                               {item.name}
                             </span>
+                            {item.number && (
+                              <span className="text-[10px] font-mono font-bold text-gray-500 bg-[#f1f3ec] px-1.5 py-0.2 rounded">
+                                {item.number}
+                              </span>
+                            )}
                             {item.isPrismana && (
                               <span className="text-[10px] font-extrabold px-1.5 py-0.2 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 text-white">
                                 PRISMANA

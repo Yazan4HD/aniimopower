@@ -37,7 +37,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/infergon-render.png",
-    "officialWikiId": "10025"
+    "officialWikiId": "10025",
+    "number": "#067",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-002",
@@ -75,7 +78,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/inferlupa-render.png",
-    "officialWikiId": "10055"
+    "officialWikiId": "10055",
+    "number": "#004",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-003",
@@ -113,11 +119,14 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/scorchhowl-render.png",
-    "officialWikiId": "10053"
+    "officialWikiId": "10053",
+    "number": "#003",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-004",
-    "slug": "scorchhowl",
+    "slug": "scorchhowl-prismana",
     "name": "Scorchhowl",
     "element": "Fire",
     "version": "1.0",
@@ -151,7 +160,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/scorchhowl-render.png",
-    "officialWikiId": "10053"
+    "officialWikiId": "10053",
+    "number": "#003",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-005",
@@ -159,7 +171,7 @@
     "name": "Sparkelf",
     "element": "Fire",
     "version": "1.0",
-    "stage": "Lumin",
+    "stage": "Nova",
     "isPrismana": false,
     "image": "/images/aniimos/sparkelf.png",
     "cardIndex": 5,
@@ -185,9 +197,12 @@
       "Fleece",
       "cus:"
     ],
-    "evolutionStage": "Lumin",
+    "evolutionStage": "Nova",
     "renderImage": "/images/renders/sparkelf-render.png",
-    "officialWikiId": "69993"
+    "officialWikiId": "69993",
+    "number": "S1",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-006",
@@ -226,7 +241,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/erlath-render.png",
-    "officialWikiId": "10483"
+    "officialWikiId": "10483",
+    "number": "#081",
+    "role": "REGEN",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-007",
@@ -265,11 +283,14 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/glacy-render.png",
-    "officialWikiId": "10043"
+    "officialWikiId": "10043",
+    "number": "#015",
+    "role": "Heal",
+    "roleIcon": "/images/roles/heal.webp"
   },
   {
     "id": "aniimo-008",
-    "slug": "glacy",
+    "slug": "glacy-prismana",
     "name": "Glacy",
     "element": "Water",
     "version": "1.0",
@@ -304,7 +325,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/glacy-render.png",
-    "officialWikiId": "10043"
+    "officialWikiId": "10043",
+    "number": "#015",
+    "role": "Heal",
+    "roleIcon": "/images/roles/heal.webp"
   },
   {
     "id": "aniimo-009",
@@ -344,11 +368,14 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/panpanta-render.png",
-    "officialWikiId": "10174"
+    "officialWikiId": "10174",
+    "number": "#052",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-010",
-    "slug": "panpanta",
+    "slug": "panpanta-prismana",
     "name": "Panpanta",
     "element": "Water",
     "version": "1.0",
@@ -385,7 +412,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/panpanta-render.png",
-    "officialWikiId": "10174"
+    "officialWikiId": "10174",
+    "number": "#052",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-011",
@@ -423,7 +453,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/piopiota-render.png",
-    "officialWikiId": "10173"
+    "officialWikiId": "10173",
+    "number": "#051",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-012",
@@ -461,11 +494,14 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/sherro-render.png",
-    "officialWikiId": "10194"
+    "officialWikiId": "10194",
+    "number": "#055",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-013",
-    "slug": "sherro",
+    "slug": "sherro-prismana",
     "name": "Sherro",
     "element": "Water",
     "version": "1.0",
@@ -502,7 +538,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/sherro-render.png",
-    "officialWikiId": "10194"
+    "officialWikiId": "10194",
+    "number": "#055",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-014",
@@ -543,7 +582,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/thunderstorm-render.png",
-    "officialWikiId": "10194"
+    "officialWikiId": "10194",
+    "number": "#055",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-015",
@@ -572,7 +614,9 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/dewple-render.png",
     "officialWikiId": "10653",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#006",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-016",
@@ -601,7 +645,9 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/dewlop-render.png",
     "officialWikiId": "10651",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#005",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-017",
@@ -622,13 +668,15 @@
       "Gachapus Lv: 57",
       "yet"
     ],
-    "role": "Support",
+    "role": "DPS",
     "evolution": "Evolves to Gachapus at Lv. 57 with a Wave Stone",
     "location": "Crescent Bay",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/popapus-render.png",
     "officialWikiId": "10621",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#011",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-018",
@@ -658,7 +706,9 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/gachapus-render.png",
     "officialWikiId": "10623",
-    "secondaryElement": "Dark"
+    "secondaryElement": "Dark",
+    "number": "#012",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-019",
@@ -679,13 +729,15 @@
       "Scrubbit Lv: 62",
       "yet"
     ],
-    "role": "Support",
+    "role": "BREAK",
     "evolution": "Evolves to Scrubbit at Lv. 62 with a Wave Stone",
     "location": "Cloudreach Falls, Crescent Bay",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/lilipole-render.png",
     "officialWikiId": "10541",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#016",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-020",
@@ -708,13 +760,15 @@
       "rain",
       "yet"
     ],
-    "role": "Break",
+    "role": "BREAK",
     "evolution": "Evolved from Lilipole at Lv. 62 with a Wave Stone",
     "location": "Cloudreach Falls during Rain",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/scrubbit-render.png",
     "officialWikiId": "10543",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#017",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-021",
@@ -743,7 +797,9 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/saws-render.png",
     "officialWikiId": "10391",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#023",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-022",
@@ -775,7 +831,9 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/whirlbite-render.png",
     "officialWikiId": "10393",
-    "secondaryElement": "Dark"
+    "secondaryElement": "Dark",
+    "number": "#024",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-023",
@@ -798,13 +856,15 @@
       "Is; Tempest Form (Water/Wind)",
       "yet"
     ],
-    "role": "DPS",
+    "role": "BREAK",
     "evolution": "Evolves to Jeburst at Lv. 66 with a Wave Stone",
     "location": "Cloudreach Falls; Tempest Form (Water/Wind)",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/jeglid-render.png",
     "officialWikiId": "10691",
-    "secondaryElement": "Wind"
+    "secondaryElement": "Wind",
+    "number": "#027",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-024",
@@ -829,13 +889,15 @@
       "to 23; Tempest Form (Water/Wind)",
       "yet"
     ],
-    "role": "DPS",
+    "role": "BREAK",
     "evolution": "Evolved from Jeglid at Lv. 66 (Wave Stone) after 'Land of Giants'",
     "location": "Cloudreach Falls (Nov 9 to 23); Tempest Form (Water/Wind)",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/jeburst-render.png",
     "officialWikiId": "10693",
-    "secondaryElement": "Dark"
+    "secondaryElement": "Dark",
+    "number": "#028",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-025",
@@ -877,7 +939,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/irisal-render.png",
-    "officialWikiId": "10212"
+    "officialWikiId": "10212",
+    "number": "#012",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-026",
@@ -917,7 +982,10 @@
     ],
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/irisalis-render.png",
-    "officialWikiId": "10212"
+    "officialWikiId": "10212",
+    "number": "S1",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-027",
@@ -955,7 +1023,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/leafy-render.png",
-    "officialWikiId": "10045"
+    "officialWikiId": "10045",
+    "number": "#016",
+    "role": "REGEN",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-028",
@@ -995,7 +1066,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/melloblum-render.png",
-    "officialWikiId": "10324"
+    "officialWikiId": "10324",
+    "number": "#035",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-029",
@@ -1034,7 +1108,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/pomawk-render.png",
-    "officialWikiId": "10475"
+    "officialWikiId": "10475",
+    "number": "#037",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-030",
@@ -1076,7 +1153,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/thornblade-render.png",
-    "officialWikiId": "10323"
+    "officialWikiId": "10323",
+    "number": "#034",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-031",
@@ -1116,7 +1196,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/tuckin-render.png",
-    "officialWikiId": "10207"
+    "officialWikiId": "10207",
+    "number": "#022",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-032",
@@ -1143,7 +1226,9 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/crocobask-render.png",
     "officialWikiId": "10603",
-    "secondaryElement": "Water"
+    "secondaryElement": "Water",
+    "number": "#019",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-033",
@@ -1170,7 +1255,9 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/bubbeep-render.png",
     "officialWikiId": "10581",
-    "secondaryElement": "Water"
+    "secondaryElement": "Water",
+    "number": "#009",
+    "roleIcon": "/images/roles/heal.webp"
   },
   {
     "id": "aniimo-034",
@@ -1200,7 +1287,9 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/glameep-render.png",
     "officialWikiId": "10583",
-    "secondaryElement": "Dark"
+    "secondaryElement": "Dark",
+    "number": "#010",
+    "roleIcon": "/images/roles/heal.webp"
   },
   {
     "id": "aniimo-035",
@@ -1227,7 +1316,9 @@
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/salabask-render.png",
     "officialWikiId": "10601",
-    "secondaryElement": "Water"
+    "secondaryElement": "Water",
+    "number": "#018",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-036",
@@ -1235,7 +1326,7 @@
     "name": "Besauce",
     "element": "Lightning",
     "version": "1.0",
-    "stage": "Lumin",
+    "stage": "Nova",
     "isPrismana": false,
     "image": "/images/aniimos/besauce.png",
     "cardIndex": 36,
@@ -1265,9 +1356,12 @@
       "Geyser",
       "? Current"
     ],
-    "evolutionStage": "Lumin",
+    "evolutionStage": "Nova",
     "renderImage": "/images/renders/besauce-render.png",
-    "officialWikiId": "10122"
+    "officialWikiId": "10122",
+    "number": "#082",
+    "role": "REGEN",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-037",
@@ -1305,11 +1399,14 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/blazen-render.png",
-    "officialWikiId": "10222"
+    "officialWikiId": "10222",
+    "number": "#046",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-038",
-    "slug": "blazen",
+    "slug": "blazen-prismana",
     "name": "Blazen",
     "element": "Lightning",
     "version": "1.0",
@@ -1343,7 +1440,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/blazen-render.png",
-    "officialWikiId": "10222"
+    "officialWikiId": "10222",
+    "number": "#046",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-039",
@@ -1383,7 +1483,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/dazmand-render.png",
-    "officialWikiId": "10474"
+    "officialWikiId": "10474",
+    "number": "S1",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-040",
@@ -1425,7 +1528,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/fenmane-render.png",
-    "officialWikiId": "10293"
+    "officialWikiId": "10293",
+    "number": "#060",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-041",
@@ -1465,7 +1571,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/fulmintis-render.png",
-    "officialWikiId": "10033"
+    "officialWikiId": "10033",
+    "number": "S1",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-042",
@@ -1505,11 +1614,14 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/luminelle-render.png",
-    "officialWikiId": "10143"
+    "officialWikiId": "10143",
+    "number": "#079",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-043",
-    "slug": "luminelle",
+    "slug": "luminelle-prismana",
     "name": "Luminelle",
     "element": "Lightning",
     "version": "1.0",
@@ -1546,7 +1658,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/luminelle-render.png",
-    "officialWikiId": "10143"
+    "officialWikiId": "10143",
+    "number": "#079",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-044",
@@ -1554,7 +1669,7 @@
     "name": "Jaguaraun",
     "element": "Lightning",
     "version": "1.1",
-    "stage": "Lumin",
+    "stage": "Nova",
     "isPrismana": false,
     "image": "/images/aniimos/jaguaraun.png",
     "cardIndex": 44,
@@ -1568,13 +1683,15 @@
       "created Aniimo",
       "yet"
     ],
-    "role": "DPS",
+    "role": "BREAK",
     "evolution": "Single stage (Does not evolve)",
     "location": "Fantasy Resonance Event / Season 1 Keepsakes",
-    "evolutionStage": "Lumin",
+    "evolutionStage": "Nova",
     "renderImage": "/images/renders/jaguaraun-render.png",
     "officialWikiId": "10713",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "S1",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-045",
@@ -1611,7 +1728,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/geoclaw-render.png",
-    "officialWikiId": "10163"
+    "officialWikiId": "10163",
+    "number": "#025",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-046",
@@ -1648,11 +1768,14 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/glynsera-render.png",
-    "officialWikiId": "10133"
+    "officialWikiId": "10133",
+    "number": "#044",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-047",
-    "slug": "glynsera",
+    "slug": "glynsera-prismana",
     "name": "Glynsera",
     "element": "Ice",
     "version": "1.0",
@@ -1689,7 +1812,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/glynsera-render.png",
-    "officialWikiId": "10133"
+    "officialWikiId": "10133",
+    "number": "#044",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-048",
@@ -1712,13 +1838,15 @@
       "ni Lv: 62",
       "yet"
     ],
-    "role": "Support",
+    "role": "REGEN",
     "evolution": "Evolves to Sugarslime or Sugartini at Lv. 62 with a Freeze Stone",
     "location": "Rosy Mirelands",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/sugarfish-render.png",
     "officialWikiId": "10591",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#013",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-049",
@@ -1739,13 +1867,15 @@
       "ish at Lv. 62 with a Freeze Stone",
       "yet"
     ],
-    "role": "Tank",
+    "role": "REGEN",
     "evolution": "Evolved from Sugarfish at Lv. 62 with a Freeze Stone",
     "location": "Rosy Mirelands",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/sugarslime-render.png",
     "officialWikiId": "10593",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#014",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-050",
@@ -1776,7 +1906,9 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/sugartini-render.png",
     "officialWikiId": "10594",
-    "secondaryElement": "Water"
+    "secondaryElement": "Water",
+    "number": "#015",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-051",
@@ -1800,13 +1932,15 @@
       "rge",
       "yet"
     ],
-    "role": "DPS",
+    "role": "BREAK",
     "evolution": "Evolves to Jabster at Lv. 64 with a Freeze Stone",
     "location": "Wildwater Gorge",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/prawnch-render.png",
     "officialWikiId": "10401",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#025",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-052",
@@ -1831,13 +1965,15 @@
       "Lightning",
       "dwater Gorge; Rainfall Form (Ice/Water)"
     ],
-    "role": "Break",
+    "role": "BREAK",
     "evolution": "Evolved from Prawnch at Lv. 64 (Freeze Stone) after beating Alpha",
     "location": "Wildwater Gorge; Rainfall Form (Ice/Water)",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/jabster-render.png",
     "officialWikiId": "10403",
-    "secondaryElement": "Lightning"
+    "secondaryElement": "Lightning",
+    "number": "#026",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-053",
@@ -1875,7 +2011,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/cornet-render.png",
-    "officialWikiId": "10185"
+    "officialWikiId": "10185",
+    "number": "#009",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-054",
@@ -1914,7 +2053,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/eklue-render.png",
-    "officialWikiId": "10443"
+    "officialWikiId": "10443",
+    "number": "#032",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-055",
@@ -1954,7 +2096,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/gracewing-render.png",
-    "officialWikiId": "10232"
+    "officialWikiId": "10232",
+    "number": "#029",
+    "role": "Heal",
+    "roleIcon": "/images/roles/heal.webp"
   },
   {
     "id": "aniimo-056",
@@ -1992,7 +2137,10 @@
     ],
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/somniwing-render.png",
-    "officialWikiId": "10232"
+    "officialWikiId": "10232",
+    "number": "#030",
+    "role": "REGEN",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-057",
@@ -2031,7 +2179,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/tromber-render.png",
-    "officialWikiId": "10184"
+    "officialWikiId": "10184",
+    "number": "#008",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-058",
@@ -2071,7 +2222,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/tubster-render.png",
-    "officialWikiId": "10187"
+    "officialWikiId": "10187",
+    "number": "#010",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-059",
@@ -2111,7 +2265,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/turbo-render.png",
-    "officialWikiId": "10262"
+    "officialWikiId": "10262",
+    "number": "#018",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-060",
@@ -2134,13 +2291,15 @@
       "Wildwater Gorge, Cloudreach Falls",
       "yet"
     ],
-    "role": "Support",
+    "role": "REGEN",
     "evolution": "Evolves to Mesmerowl at Lv. 57 with a Gust Stone",
     "location": "Wildwater Gorge, Cloudreach Falls",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/hypnowl-render.png",
     "officialWikiId": "10571",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#003",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-061",
@@ -2148,7 +2307,7 @@
     "name": "Mesmerowl",
     "element": "Wind",
     "version": "1.1",
-    "stage": "Gamma",
+    "stage": "Nova",
     "isPrismana": false,
     "image": "/images/aniimos/mesmerowl.png",
     "cardIndex": 61,
@@ -2161,13 +2320,15 @@
       "wl at Lv. 57 with a Gust Stone",
       "yet"
     ],
-    "role": "DPS",
+    "role": "REGEN",
     "evolution": "Evolved from Hypnowl at Lv. 57 with a Gust Stone",
     "location": "Wildwater Gorge",
-    "evolutionStage": "Gamma",
+    "evolutionStage": "Nova",
     "renderImage": "/images/renders/mesmerowl-render.png",
     "officialWikiId": "10573",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#004",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-062",
@@ -2198,7 +2359,9 @@
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/hypnyto-render.png",
     "officialWikiId": "10574",
-    "secondaryElement": "Light"
+    "secondaryElement": "Light",
+    "number": "S1",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-063",
@@ -2223,13 +2386,15 @@
       "Is, Wildwater Gorge; Cloudreach Falls",
       "yet"
     ],
-    "role": "Support",
+    "role": "BREAK",
     "evolution": "Evolves to Buffby (Hearty) or Royalby (Queen) at Lv. 62 with a Gust Stone",
     "location": "Whisperwake Isles, Wildwater Gorge, Cloudreach Falls",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/puffby-render.png",
     "officialWikiId": "10611",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#020",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-064",
@@ -2250,13 +2415,15 @@
       "at Lv. 62 (Gust Stone",
       "Hearty"
     ],
-    "role": "Break",
+    "role": "BREAK",
     "evolution": "Evolved from Puffby at Lv. 62 (Gust Stone, Hearty nature)",
     "location": "Wildwater Gorge, Cloudreach Falls",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/buffby-render.png",
     "officialWikiId": "10613",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#021",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-065",
@@ -2281,13 +2448,15 @@
       "n Abundance; Nov",
       "to 16"
     ],
-    "role": "Regen",
+    "role": "REGEN",
     "evolution": "Evolved from Puffby at Lv. 62 (Gust Stone, Queen nature)",
     "location": "Whisperwake Isles (Nov 2 to 16)",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/royalby-render.png",
     "officialWikiId": "10614",
-    "secondaryElement": "Light"
+    "secondaryElement": "Light",
+    "number": "#022",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-066",
@@ -2327,7 +2496,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/bailite-render.png",
-    "officialWikiId": "10433"
+    "officialWikiId": "10433",
+    "number": "#076",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-067",
@@ -2369,7 +2541,10 @@
     ],
     "evolutionStage": "Gamma",
     "renderImage": "/images/renders/geodeback-render.png",
-    "officialWikiId": "10284"
+    "officialWikiId": "10284",
+    "number": "#073",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-068",
@@ -2406,7 +2581,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/grizbo-render.png",
-    "officialWikiId": "10503"
+    "officialWikiId": "10503",
+    "number": "#069",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-069",
@@ -2446,7 +2624,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/minespine-render.png",
-    "officialWikiId": "10285"
+    "officialWikiId": "10285",
+    "number": "#074",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-070",
@@ -2488,7 +2669,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/waleetle-render.png",
-    "officialWikiId": "10451"
+    "officialWikiId": "10451",
+    "number": "#057",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-071",
@@ -2509,13 +2693,15 @@
       "h at Lv: 57 with a Loam Stone",
       "rain (Earth only)"
     ],
-    "role": "Regen",
+    "role": "REGEN",
     "evolution": "Evolved from Reefish at Lv. 57 with a Loam Stone during rain",
     "location": "Rosy Mirelands, Crescent Bay during Rain",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/coraliz-render.png",
     "officialWikiId": "10383",
-    "secondaryElement": "Water"
+    "secondaryElement": "Water",
+    "number": "#002",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-072",
@@ -2538,13 +2724,15 @@
       "rain (Earth only)",
       "Rosy"
     ],
-    "role": "Regen",
+    "role": "REGEN",
     "evolution": "Evolves to Coraliz at Lv. 57 with a Loam Stone during rain",
     "location": "Rosy Mirelands during Rain",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/reefish-render.png",
     "officialWikiId": "10381",
-    "secondaryElement": "Water"
+    "secondaryElement": "Water",
+    "number": "#001",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-073",
@@ -2582,7 +2770,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/fragrancier-render.png",
-    "officialWikiId": "10352"
+    "officialWikiId": "10352",
+    "number": "#039",
+    "role": "Support",
+    "roleIcon": "/images/roles/support.webp"
   },
   {
     "id": "aniimo-074",
@@ -2620,7 +2811,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/hexxin-render.png",
-    "officialWikiId": "10203"
+    "officialWikiId": "10203",
+    "number": "#021",
+    "role": "REGEN",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-075",
@@ -2657,7 +2851,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/ignitis-render.png",
-    "officialWikiId": "10032"
+    "officialWikiId": "10032",
+    "number": "#041",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-076",
@@ -2695,7 +2892,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/pawney-render.png",
-    "officialWikiId": "10026"
+    "officialWikiId": "10026",
+    "number": "#062",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-077",
@@ -2734,7 +2934,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/rookey-render.png",
-    "officialWikiId": "10027"
+    "officialWikiId": "10027",
+    "number": "#063",
+    "role": "BREAK",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-078",
@@ -2774,7 +2977,10 @@
     ],
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/stellarys-render.png",
-    "officialWikiId": "10012"
+    "officialWikiId": "10012",
+    "number": "#006",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-079",
@@ -2796,13 +3002,15 @@
       "Rosy Mirelands; Wildwater Gorge",
       "yet"
     ],
-    "role": "Regen",
+    "role": "REGEN",
     "evolution": "Evolves to Pouchwisp at Lv. 57 with a Night Stone",
     "location": "Rosy Mirelands, Wildwater Gorge",
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/coinwisp-render.png",
     "officialWikiId": "10631",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#007",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-080",
@@ -2826,13 +3034,15 @@
       "n Abundance; Nov 2 to Q",
       "yet"
     ],
-    "role": "Regen",
+    "role": "REGEN",
     "evolution": "Evolved from Coinwisp at Lv. 57 with a Night Stone",
     "location": "Rosy Mirelands (Nov 2 to 9)",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/pouchwisp-render.png",
     "officialWikiId": "10633",
-    "secondaryElement": null
+    "secondaryElement": null,
+    "number": "#008",
+    "roleIcon": "/images/roles/regen.webp"
   },
   {
     "id": "aniimo-081",
@@ -2858,13 +3068,15 @@
       "6+};",
       "yet"
     ],
-    "role": "Break",
+    "role": "BREAK",
     "evolution": "Hatched from Season Achievement egg at Lv. 25 (Night Stone, BREAK Talent 6+)",
     "location": "Cloudreach Falls, Season Achievement Reward",
     "evolutionStage": "Nova",
     "renderImage": "/images/renders/ekrim-render.png",
     "officialWikiId": "10444",
-    "secondaryElement": "Fire"
+    "secondaryElement": "Fire",
+    "number": "#029",
+    "roleIcon": "/images/roles/break.webp"
   },
   {
     "id": "aniimo-082",
@@ -2901,7 +3113,10 @@
     ],
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/helion-render.png",
-    "officialWikiId": "10361"
+    "officialWikiId": "10361",
+    "number": "",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   },
   {
     "id": "aniimo-083",
@@ -2939,6 +3154,9 @@
     ],
     "evolutionStage": "Lumin",
     "renderImage": "/images/renders/lunara-render.png",
-    "officialWikiId": "10371"
+    "officialWikiId": "10371",
+    "number": "",
+    "role": "DPS",
+    "roleIcon": "/images/roles/dps.webp"
   }
 ]

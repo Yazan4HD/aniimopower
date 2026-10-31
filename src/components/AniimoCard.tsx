@@ -76,13 +76,47 @@ export default function AniimoCard({ aniimo, onClick }: AniimoCardProps) {
               </span>
             </div>
 
-            <h3 className="font-extrabold text-base text-[#1d2046] tracking-tight truncate mt-1 group-hover:text-[#cc5231] transition-colors">
-              {aniimo.name}
-            </h3>
-
             <div className="flex items-center gap-1.5 mt-1">
+              <h3 className="font-extrabold text-base text-[#1d2046] tracking-tight truncate group-hover:text-[#cc5231] transition-colors">
+                {aniimo.name}
+              </h3>
+              {aniimo.number && (
+                <span className="text-[11px] font-mono font-bold text-[#6b7280] bg-[#f1f3ec] px-1.5 py-0.2 rounded shrink-0">
+                  {aniimo.number}
+                </span>
+              )}
+            </div>
+
+            <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+              {/* Official Combat Role Badge with Icon */}
+              {aniimo.role && (
+                <span
+                  className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-extrabold border ${
+                    aniimo.role === "DPS"
+                      ? "bg-red-50 text-red-700 border-red-200"
+                      : aniimo.role === "BREAK"
+                      ? "bg-amber-50 text-amber-800 border-amber-200"
+                      : aniimo.role === "Support"
+                      ? "bg-purple-50 text-purple-700 border-purple-200"
+                      : aniimo.role === "Heal"
+                      ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                      : "bg-teal-50 text-teal-700 border-teal-200"
+                  }`}
+                >
+                  <Image
+                    src={`/images/roles/${aniimo.role.toLowerCase()}.webp`}
+                    alt={aniimo.role}
+                    width={12}
+                    height={12}
+                    className="shrink-0 object-contain"
+                  />
+                  <span>{aniimo.role}</span>
+                </span>
+              )}
+
+              {/* Evolution Stage Badge */}
               <span
-                className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md border tracking-wide ${
+                className={`text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-md border tracking-wide ${
                   aniimo.stage === "Nova"
                     ? "bg-purple-50 text-purple-700 border-purple-200"
                     : aniimo.stage === "Gamma"
@@ -92,7 +126,6 @@ export default function AniimoCard({ aniimo, onClick }: AniimoCardProps) {
               >
                 {aniimo.stage}
               </span>
-              <span className="text-[11px] text-[#6b7280] font-medium">Stage</span>
             </div>
           </div>
         </div>

@@ -11,11 +11,16 @@ export type ElementType =
 
 export type EvolutionStage = "Lumin" | "Gamma" | "Nova";
 
+export type RoleType = "DPS" | "BREAK" | "Support" | "Heal" | "REGEN";
+
 export interface Aniimo {
   id: string;
   slug: string;
   name: string;
+  number?: string;
   element: ElementType;
+  role: RoleType | string;
+  roleIcon?: string;
   version: "1.0" | "1.1";
   stage: EvolutionStage;
   evolutionStage: EvolutionStage;
@@ -36,7 +41,6 @@ export interface Aniimo {
   awakeningFocus?: string[];
   skills?: string[];
   // v1.1 properties
-  role?: string;
   evolution?: string;
   location?: string;
   secondaryElement?: string | null;

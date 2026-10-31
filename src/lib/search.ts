@@ -5,6 +5,7 @@ export function createAniimoSearchIndex(aniimos: Aniimo[]) {
   const options = {
     keys: [
       { name: "name", weight: 0.5 },
+      { name: "number", weight: 0.4 },
       { name: "element", weight: 0.2 },
       { name: "secondaryElement", weight: 0.15 },
       { name: "heldItem", weight: 0.2 },

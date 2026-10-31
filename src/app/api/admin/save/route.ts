@@ -8,8 +8,9 @@ async function pushFileToGitHub(
   repo: string,
   branch: string,
   filePath: string,
-  contentStr: string,
-  commitMessage: string
+  content: string,
+  commitMessage: string,
+  isAlreadyBase64 = false
 ) {
   const url = `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branch}`;
 
@@ -27,7 +28,9 @@ async function pushFileToGitHub(
     currentSha = data.sha;
   }
 
-  const base64Content = Buffer.from(contentStr, "utf-8").toString("base64");
+  const base64Content = isAlreadyBase64
+    ? content
+    : Buffer.from(content, "utf-8").toString("base64");
 
   const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
     method: "PUT",
@@ -65,7 +68,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { aniimos, heldItems } = body;
+    const { aniimos, heldItems, pendingUploads } = body;
 
     let savedLocally = false;
     let githubSynced = false;
@@ -74,7 +77,7 @@ export async function POST(req: NextRequest) {
     const aniimosStr = aniimos ? JSON.stringify(aniimos, null, 2) : null;
     const heldItemsStr = heldItems ? JSON.stringify(heldItems, null, 2) : null;
 
-    // 1. Attempt local file write (works in local dev & Node environments)
+    // 1. Attempt local file writes (works in local dev & Node environments)
     try {
       const aniimosPath = path.join(process.cwd(), "src", "data", "aniimos.json");
       const heldItemsPath = path.join(process.cwd(), "src", "data", "held_items.json");
@@ -85,6 +88,16 @@ export async function POST(req: NextRequest) {
       if (heldItemsStr) {
         fs.writeFileSync(heldItemsPath, heldItemsStr, "utf-8");
       }
+
+      if (pendingUploads && Array.isArray(pendingUploads)) {
+        for (const upload of pendingUploads) {
+          const fullPath = path.join(process.cwd(), upload.filePath);
+          const dir = path.dirname(fullPath);
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(fullPath, Buffer.from(upload.contentBase64, "base64"));
+        }
+      }
+
       savedLocally = true;
     } catch (fsErr) {
       console.warn("Local disk write skipped (likely read-only serverless environment):", fsErr);
@@ -96,6 +109,21 @@ export async function POST(req: NextRequest) {
     const ghBranch = process.env.GITHUB_BRANCH || "main";
 
     if (ghToken) {
+      // Upload pending images to GitHub
+      if (pendingUploads && Array.isArray(pendingUploads)) {
+        for (const upload of pendingUploads) {
+          await pushFileToGitHub(
+            ghToken,
+            ghRepo,
+            ghBranch,
+            upload.filePath,
+            upload.contentBase64,
+            `chore(cms): upload asset ${path.basename(upload.filePath)} [by ${session.username}]`,
+            true
+          );
+        }
+      }
+
       if (aniimosStr) {
         const result = await pushFileToGitHub(
           ghToken,
@@ -136,12 +164,11 @@ export async function POST(req: NextRequest) {
       githubSynced,
       commitUrl: githubCommitUrl,
       message: githubSynced
-        ? "Saved and pushed to GitHub! Vercel is now building and deploying the changes."
-        : "Saved changes to local project files.",
+        ? "Saved and pushed to GitHub! Changes and uploaded images are now being deployed by Vercel."
+        : "Saved changes and uploaded files locally.",
     });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Failed to save CMS data";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
-

@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Aniimo, ElementType, EvolutionStage, HeldItem } from "@/types";
-import { ELEMENT_COLORS, EVOLUTION_STAGE_CONFIG } from "@/lib/constants";
+import { Aniimo, ElementType, EvolutionStage, HeldItem, RoleType } from "@/types";
+import { ELEMENT_COLORS, EVOLUTION_STAGE_CONFIG, ROLE_CONFIG } from "@/lib/constants";
 import {
   Lock,
   User,
@@ -30,6 +30,7 @@ import {
   Database,
   Layers,
   Settings,
+  Upload,
 } from "lucide-react";
 
 const ALL_ELEMENTS: ElementType[] = [
@@ -44,7 +45,14 @@ const ALL_ELEMENTS: ElementType[] = [
   "Light",
 ];
 
+const ALL_ROLES: RoleType[] = ["DPS", "BREAK", "Support", "Heal", "REGEN"];
 const ALL_STAGES: EvolutionStage[] = ["Lumin", "Gamma", "Nova"];
+
+interface PendingUpload {
+  filePath: string;
+  contentBase64: string;
+  previewUrl: string;
+}
 
 export default function AdminPage() {
   // Authentication State
@@ -72,10 +80,15 @@ export default function AdminPage() {
     url?: string;
   } | null>(null);
 
+  // Pending Uploads State
+  const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   // UI Tabs & Filters
   const [activeTab, setActiveTab] = useState<"aniimos" | "items" | "settings">("aniimos");
   const [searchQuery, setSearchQuery] = useState("");
   const [stageFilter, setStageFilter] = useState<EvolutionStage | "All">("All");
+  const [roleFilter, setRoleFilter] = useState<string>("All");
   const [elementFilter, setElementFilter] = useState<ElementType | "All">("All");
   const [versionFilter, setVersionFilter] = useState<"1.0" | "1.1" | "All">("All");
   const [prismanaOnly, setPrismanaOnly] = useState(false);
@@ -171,11 +184,15 @@ export default function AdminPage() {
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const matchesName = a.name.toLowerCase().includes(q);
+        const matchesNum = a.number?.toLowerCase().includes(q);
         const matchesRole = a.role?.toLowerCase().includes(q);
         const matchesHeld = a.heldItem?.toLowerCase().includes(q);
-        if (!matchesName && !matchesRole && !matchesHeld) return false;
+        if (!matchesName && !matchesNum && !matchesRole && !matchesHeld) return false;
       }
       if (stageFilter !== "All" && a.stage !== stageFilter && a.evolutionStage !== stageFilter) {
+        return false;
+      }
+      if (roleFilter !== "All" && a.role !== roleFilter) {
         return false;
       }
       if (elementFilter !== "All" && a.element !== elementFilter) {
@@ -189,7 +206,7 @@ export default function AdminPage() {
       }
       return true;
     });
-  }, [aniimos, searchQuery, stageFilter, elementFilter, versionFilter, prismanaOnly]);
+  }, [aniimos, searchQuery, stageFilter, roleFilter, elementFilter, versionFilter, prismanaOnly]);
 
   // Open Edit Modal
   const openEditModal = (aniimo: Aniimo) => {
@@ -205,6 +222,7 @@ export default function AdminPage() {
       id: newId,
       slug: "new-aniimo",
       name: "",
+      number: `#${String(aniimos.length + 1).padStart(3, "0")}`,
       element: "Fire",
       version: "1.1",
       stage: "Lumin",
@@ -216,6 +234,7 @@ export default function AdminPage() {
       col: 0,
       rawTexts: [],
       role: "DPS",
+      roleIcon: "/images/roles/dps.webp",
       evolution: "unknown",
       location: "unknown",
     });
@@ -223,16 +242,58 @@ export default function AdminPage() {
     setIsModalOpen(true);
   };
 
+  // Handle Image File Upload to Client State (will commit to GitHub on save)
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !editingAniimo) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      const base64Data = result.split(",")[1];
+      const extension = file.name.split(".").pop() || "png";
+      const cleanSlug = editingAniimo.slug || editingAniimo.name.toLowerCase().replace(/\s+/g, "-") || "aniimo";
+      const fileName = `${cleanSlug}-${Date.now()}.${extension}`;
+      const repoFilePath = `public/images/aniimos/${fileName}`;
+      const publicPath = `/images/aniimos/${fileName}`;
+
+      // Update current editing Aniimo preview image
+      setEditingAniimo({
+        ...editingAniimo,
+        image: publicPath,
+      });
+
+      // Add to pending uploads
+      setPendingUploads((prev) => [
+        ...prev.filter((p) => p.filePath !== repoFilePath),
+        {
+          filePath: repoFilePath,
+          contentBase64: base64Data,
+          previewUrl: result,
+        },
+      ]);
+
+      setHasUnsavedChanges(true);
+    };
+    reader.readAsDataURL(file);
+  };
+
   // Save Modal Form Changes to Local State
   const handleModalSave = (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingAniimo || !editingAniimo.name.trim()) return;
 
+    const roleIcon = `/images/roles/${(editingAniimo.role || "dps").toLowerCase()}.webp`;
+    const updated = {
+      ...editingAniimo,
+      roleIcon,
+    };
+
     if (isCreatingNew) {
-      setAniimos((prev) => [editingAniimo, ...prev]);
+      setAniimos((prev) => [updated, ...prev]);
     } else {
       setAniimos((prev) =>
-        prev.map((item) => (item.id === editingAniimo.id ? editingAniimo : item))
+        prev.map((item) => (item.id === updated.id ? updated : item))
       );
     }
 
@@ -257,7 +318,7 @@ export default function AdminPage() {
     setHasUnsavedChanges(true);
   };
 
-  // Save All Changes to Server & GitHub
+  // Save All Changes to Server & GitHub (including uploaded images)
   const handlePersistChanges = async () => {
     setIsSaving(true);
     setSaveStatus(null);
@@ -269,6 +330,10 @@ export default function AdminPage() {
         body: JSON.stringify({
           aniimos,
           heldItems,
+          pendingUploads: pendingUploads.map((p) => ({
+            filePath: p.filePath,
+            contentBase64: p.contentBase64,
+          })),
         }),
       });
 
@@ -283,6 +348,7 @@ export default function AdminPage() {
       }
 
       setHasUnsavedChanges(false);
+      setPendingUploads([]);
       setSaveStatus({
         type: "success",
         message: data.message || "Changes published successfully!",
@@ -490,7 +556,11 @@ export default function AdminPage() {
               ) : (
                 <Save className="w-3.5 h-3.5" />
               )}
-              <span>{hasUnsavedChanges ? "Publish Changes *" : "Save & Sync"}</span>
+              <span>
+                {hasUnsavedChanges
+                  ? `Publish Changes ${pendingUploads.length ? `(${pendingUploads.length} uploads)` : "*"} `
+                  : "Save & Sync"}
+              </span>
             </button>
 
             {/* Live Site Link */}
@@ -611,9 +681,25 @@ export default function AdminPage() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Filter by name, role, held item..."
+                  placeholder="Filter by name, # number, role..."
                   className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#cc5231]"
                 />
+              </div>
+
+              {/* Role Filter */}
+              <div className="flex items-center gap-1.5 bg-[#0d0f1e] p-1 rounded-xl border border-white/10">
+                <span className="text-[11px] font-bold text-gray-400 px-2 uppercase">Role:</span>
+                {(["All", ...ALL_ROLES] as const).map((r) => (
+                  <button
+                    key={r}
+                    onClick={() => setRoleFilter(r)}
+                    className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+                      roleFilter === r ? "bg-[#cc5231] text-white" : "text-gray-400 hover:text-white"
+                    }`}
+                  >
+                    {r}
+                  </button>
+                ))}
               </div>
 
               {/* Stage Filter (Lumin, Gamma, Nova) */}
@@ -676,11 +762,12 @@ export default function AdminPage() {
                 <table className="w-full text-left text-xs">
                   <thead className="bg-[#0d0f1e] text-gray-400 uppercase text-[10px] tracking-wider border-b border-white/10">
                     <tr>
+                      <th className="px-3 py-3 w-14"># Dex</th>
                       <th className="px-4 py-3">Aniimo</th>
                       <th className="px-4 py-3">Element</th>
+                      <th className="px-4 py-3">Role</th>
                       <th className="px-4 py-3">Evolution Stage</th>
                       <th className="px-4 py-3">Version</th>
-                      <th className="px-4 py-3">Role / Habitat</th>
                       <th className="px-4 py-3 text-right">Actions</th>
                     </tr>
                   </thead>
@@ -689,6 +776,13 @@ export default function AdminPage() {
                       const elem = ELEMENT_COLORS[aniimo.element];
                       return (
                         <tr key={aniimo.id} className="hover:bg-white/[0.02] transition-colors">
+                          {/* Dex # */}
+                          <td className="px-3 py-3">
+                            <span className="font-mono text-xs font-bold text-gray-400 bg-white/5 px-2 py-0.5 rounded">
+                              {aniimo.number || "—"}
+                            </span>
+                          </td>
+
                           {/* Avatar & Name */}
                           <td className="px-4 py-3">
                             <div className="flex items-center gap-3">
@@ -715,7 +809,7 @@ export default function AdminPage() {
                                   )}
                                 </div>
                                 <div className="text-[10px] text-gray-500 font-mono">
-                                  {aniimo.id}
+                                  /aniimo/{aniimo.slug}
                                 </div>
                               </div>
                             </div>
@@ -735,6 +829,22 @@ export default function AdminPage() {
                                 </span>
                               )}
                             </div>
+                          </td>
+
+                          {/* Role with Official Icon */}
+                          <td className="px-4 py-3">
+                            {aniimo.role && (
+                              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg text-xs font-black bg-white/5 border border-white/10 text-gray-200">
+                                <Image
+                                  src={`/images/roles/${aniimo.role.toLowerCase()}.webp`}
+                                  alt={aniimo.role}
+                                  width={13}
+                                  height={13}
+                                  className="shrink-0 object-contain"
+                                />
+                                <span>{aniimo.role}</span>
+                              </span>
+                            )}
                           </td>
 
                           {/* Evolution Stage (Quick Select between Lumin, Gamma, Nova) */}
@@ -777,23 +887,22 @@ export default function AdminPage() {
                             </span>
                           </td>
 
-                          {/* Role / Location */}
-                          <td className="px-4 py-3 max-w-[200px]">
-                            <div className="truncate font-semibold text-gray-300">
-                              {aniimo.role || aniimo.personality || aniimo.heldItem || "—"}
-                            </div>
-                            <div className="text-[10px] text-gray-500 truncate">
-                              {aniimo.location || aniimo.evolution || "—"}
-                            </div>
-                          </td>
-
                           {/* Actions */}
                           <td className="px-4 py-3 text-right">
                             <div className="flex items-center justify-end gap-1.5">
+                              {/* Open Dedicated Page Link */}
+                              <Link
+                                href={`/aniimo/${aniimo.slug}`}
+                                target="_blank"
+                                className="p-1.5 text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg transition-all"
+                                title="Open Dedicated Page (aniimopower.com/aniimo/...)"
+                              >
+                                <ExternalLink className="w-3.5 h-3.5" />
+                              </Link>
                               <button
                                 onClick={() => openEditModal(aniimo)}
                                 className="p-1.5 text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg transition-all"
-                                title="Edit Details"
+                                title="Edit Details & Upload Image"
                               >
                                 <Edit className="w-3.5 h-3.5" />
                               </button>
@@ -914,9 +1023,9 @@ export default function AdminPage() {
                 </div>
                 <p className="text-xs text-gray-400">
                   Add your GitHub Personal Access Token as <code>GITHUB_TOKEN</code> in Vercel. When
-                  configured, every time you click &quot;Save & Sync&quot;, changes are committed
-                  directly to <code>Yazan4HD/aniimopower</code> on GitHub, triggering an automatic
-                  Vercel redeploy!
+                  configured, every time you click &quot;Save & Sync&quot;, changes and uploaded images
+                  are committed directly to <code>Yazan4HD/aniimopower</code> on GitHub, triggering an
+                  automatic Vercel redeploy!
                 </p>
               </div>
             </div>
@@ -955,9 +1064,27 @@ export default function AdminPage() {
             </div>
 
             <form onSubmit={handleModalSave} className="space-y-4">
-              {/* Row 1: Name & ID */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
+              {/* Row 1: Name, Number & Slug */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="sm:col-span-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
+                    Dex Number *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={editingAniimo.number || ""}
+                    onChange={(e) =>
+                      setEditingAniimo({
+                        ...editingAniimo,
+                        number: e.target.value,
+                      })
+                    }
+                    placeholder="#001, #067, S1..."
+                    className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-sm text-white font-mono focus:outline-none focus:border-[#cc5231]"
+                  />
+                </div>
+                <div className="sm:col-span-2">
                   <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
                     Name *
                   </label>
@@ -975,21 +1102,32 @@ export default function AdminPage() {
                     className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-[#cc5231]"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
-                    ID Identifier
-                  </label>
-                  <input
-                    type="text"
-                    disabled
-                    value={editingAniimo.id}
-                    className="w-full bg-[#0d0f1e]/50 border border-white/5 rounded-xl px-3 py-2 text-sm text-gray-500 font-mono"
-                  />
-                </div>
               </div>
 
-              {/* Row 2: Elements */}
+              {/* Row 2: Combat Role & Primary Element */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-blue-400 mb-1 flex items-center gap-1">
+                    <span>Combat Role *</span>
+                  </label>
+                  <select
+                    value={editingAniimo.role}
+                    onChange={(e) =>
+                      setEditingAniimo({
+                        ...editingAniimo,
+                        role: e.target.value as RoleType,
+                        roleIcon: `/images/roles/${e.target.value.toLowerCase()}.webp`,
+                      })
+                    }
+                    className="w-full bg-[#0d0f1e] border border-blue-500/40 rounded-xl px-3 py-2 text-sm text-white font-bold focus:outline-none focus:border-blue-500"
+                  >
+                    {ALL_ROLES.map((r) => (
+                      <option key={r} value={r}>
+                        {r}
+                      </option>
+                    ))}
+                  </select>
+                </div>
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
                     Primary Element *
@@ -1011,26 +1149,9 @@ export default function AdminPage() {
                     ))}
                   </select>
                 </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
-                    Secondary Element (Optional)
-                  </label>
-                  <input
-                    type="text"
-                    value={editingAniimo.secondaryElement || ""}
-                    onChange={(e) =>
-                      setEditingAniimo({
-                        ...editingAniimo,
-                        secondaryElement: e.target.value || null,
-                      })
-                    }
-                    placeholder="e.g. Earth, Wind, or empty"
-                    className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-[#cc5231]"
-                  />
-                </div>
               </div>
 
-              {/* Row 3: Evolution Stage (STRICTLY Lumin, Gamma, Nova) & Version */}
+              {/* Row 3: Evolution Stage & Game Version */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">
@@ -1074,22 +1195,8 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              {/* Row 4: Combat Role & Evolution Milestone */}
+              {/* Row 4: Evolution Milestone & Habitat */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
-                    Combat Role (v1.1)
-                  </label>
-                  <input
-                    type="text"
-                    value={editingAniimo.role || ""}
-                    onChange={(e) =>
-                      setEditingAniimo({ ...editingAniimo, role: e.target.value })
-                    }
-                    placeholder="e.g. Tank, Burst DPS, Support"
-                    className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-[#cc5231]"
-                  />
-                </div>
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
                     Evolution Requirement & Milestone
@@ -1104,25 +1211,23 @@ export default function AdminPage() {
                     className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-[#cc5231]"
                   />
                 </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
+                    Habitat / How to Get
+                  </label>
+                  <input
+                    type="text"
+                    value={editingAniimo.location || ""}
+                    onChange={(e) =>
+                      setEditingAniimo({ ...editingAniimo, location: e.target.value })
+                    }
+                    placeholder="e.g. High Cliffs, Shorelines, Season Pass"
+                    className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-[#cc5231]"
+                  />
+                </div>
               </div>
 
-              {/* Row 5: Habitat / Location */}
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
-                  Habitat / How to Get
-                </label>
-                <input
-                  type="text"
-                  value={editingAniimo.location || ""}
-                  onChange={(e) =>
-                    setEditingAniimo({ ...editingAniimo, location: e.target.value })
-                  }
-                  placeholder="e.g. High Cliffs, Shorelines, Season Pass"
-                  className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-[#cc5231]"
-                />
-              </div>
-
-              {/* Row 6: v1.0 Specifics: Personality & Held Item */}
+              {/* Row 5: v1.0 Specifics: Personality & Held Item */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
@@ -1154,8 +1259,52 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              {/* Row 7: Prismana Variant Checkbox */}
-              <div className="flex items-center gap-2 pt-2">
+              {/* Row 6: Image Upload with Direct GitHub Commit */}
+              <div className="p-4 rounded-xl bg-[#0d0f1e] border border-white/10 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-wider text-gray-300 flex items-center gap-1.5">
+                    <Upload className="w-4 h-4 text-[#cc5231]" />
+                    <span>Upload Image to GitHub Repository</span>
+                  </span>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileUpload}
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="px-3 py-1.5 rounded-lg bg-[#cc5231] hover:bg-[#b84526] text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <Upload className="w-3.5 h-3.5" />
+                    <span>Choose Image File</span>
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 bg-black/40 shrink-0">
+                    <Image
+                      src={editingAniimo.image}
+                      alt={editingAniimo.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-mono text-gray-300 truncate">
+                      {editingAniimo.image}
+                    </div>
+                    <div className="text-[10px] text-gray-500">
+                      When you click &quot;Publish Changes&quot;, this file will be uploaded directly to GitHub.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Prismana Variant Checkbox */}
+              <div className="flex items-center gap-2 pt-1">
                 <input
                   type="checkbox"
                   id="prismanaCheck"
@@ -1177,37 +1326,6 @@ export default function AdminPage() {
                 </label>
               </div>
 
-              {/* Row 8: Image URLs */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
-                    Avatar Image URL
-                  </label>
-                  <input
-                    type="text"
-                    value={editingAniimo.image}
-                    onChange={(e) =>
-                      setEditingAniimo({ ...editingAniimo, image: e.target.value })
-                    }
-                    className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#cc5231]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
-                    Full Render Image URL
-                  </label>
-                  <input
-                    type="text"
-                    value={editingAniimo.renderImage || ""}
-                    onChange={(e) =>
-                      setEditingAniimo({ ...editingAniimo, renderImage: e.target.value })
-                    }
-                    placeholder="/images/renders/..."
-                    className="w-full bg-[#0d0f1e] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#cc5231]"
-                  />
-                </div>
-              </div>
-
               {/* Modal Buttons */}
               <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/10 mt-6">
                 <button
@@ -1222,7 +1340,7 @@ export default function AdminPage() {
                   className="px-5 py-2 bg-[#cc5231] hover:bg-[#b84526] text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-2"
                 >
                   <Check className="w-4 h-4" />
-                  <span>{isCreatingNew ? "Add Aniimo" : "Update Aniimo"}</span>
+                  <span>{isCreatingNew ? "Add Aniimo" : "Apply Edits"}</span>
                 </button>
               </div>
             </form>
@@ -1232,4 +1350,3 @@ export default function AdminPage() {
     </div>
   );
 }
-

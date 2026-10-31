@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Aniimo, HeldItem } from "@/types";
 import { ELEMENT_COLORS, PERSONALITY_DESCRIPTIONS } from "@/lib/constants";
-import { X, Sparkles, Swords, Zap, Calculator, MapPin, Check, GitBranch, Info } from "lucide-react";
+import { X, Sparkles, Swords, Zap, Calculator, MapPin, Check, GitBranch, Info, ExternalLink } from "lucide-react";
 import heldItemsData from "@/data/held_items.json";
 
 interface AniimoModalProps {
@@ -77,6 +77,35 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
               {/* Title & Metadata */}
               <div className="flex-1">
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1.5">
+                  {aniimo.number && (
+                    <span className="text-xs font-mono font-black text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md border border-gray-200">
+                      {aniimo.number}
+                    </span>
+                  )}
+                  {aniimo.role && (
+                    <span
+                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-black border ${
+                        aniimo.role === "DPS"
+                          ? "bg-red-50 text-red-700 border-red-200"
+                          : aniimo.role === "BREAK"
+                          ? "bg-amber-50 text-amber-800 border-amber-200"
+                          : aniimo.role === "Support"
+                          ? "bg-purple-50 text-purple-700 border-purple-200"
+                          : aniimo.role === "Heal"
+                          ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                          : "bg-teal-50 text-teal-700 border-teal-200"
+                      }`}
+                    >
+                      <Image
+                        src={`/images/roles/${aniimo.role.toLowerCase()}.webp`}
+                        alt={aniimo.role}
+                        width={12}
+                        height={12}
+                        className="shrink-0 object-contain"
+                      />
+                      <span>{aniimo.role}</span>
+                    </span>
+                  )}
                   <span className={`text-xs font-black uppercase px-2.5 py-0.5 rounded-md text-white ${elem.bg}`}>
                     {aniimo.element} Element
                   </span>
@@ -191,7 +220,7 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
                       href="/held-items"
                       className="text-xs font-bold text-[#cc5231] hover:underline"
                     >
-                      View Farm Map →
+                      View Held Items Guide →
                     </Link>
                   </div>
 
@@ -284,13 +313,17 @@ export default function AniimoModal({ aniimo, onClose }: AniimoModalProps) {
 
           {/* Action Row */}
           <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <span className="text-xs text-gray-500 font-medium">
-              Source: Official Aniimo Power Cards
-            </span>
+            <Link
+              href={`/aniimo/${aniimo.slug}`}
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-white hover:bg-gray-100 border border-gray-300 text-[#1d2046] font-bold text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center gap-2 group"
+            >
+              <span>Open Dedicated Page</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#cc5231] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
 
             <Link
               href={`/calculator?aniimo=${aniimo.slug}`}
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#1d2046] hover:bg-[#cc5231] text-white font-bold text-sm transition-all shadow-md flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#1d2046] hover:bg-[#cc5231] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 group"
             >
               <Calculator className="w-4 h-4 text-[#ecd86a] group-hover:rotate-12 transition-transform" />
               <span>Track Upgrades in Calculator</span>
